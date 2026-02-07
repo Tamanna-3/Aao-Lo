@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f6f7fb;
+  color: #16325B;
+}
+
+.results-header {
+  text-align: center;
+  padding: 90px 20px 40px;
+  background: #fff;
+}
+
+.results-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.results-header p {
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+/* GRID */
+.results-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.restaurant-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-8px);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cuisine {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 6px 0;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.tag {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  background: #eaf0ff;
+  color: #16325B;
+}
+
+.budget {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.rating {
+  margin-top: 10px;
+  color: #f4b400;
+  font-weight: bold;
+}
+
+.vibe {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #374151;
+}

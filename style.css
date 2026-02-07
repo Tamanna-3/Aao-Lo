@@ -1,0 +1,803 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+.logo img {
+    width: 120px;
+    margin-left: 15px;
+}
+.bar {
+    display: none;
+    color: #FDDE55;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    background: rgba(15, 28, 54, 0.921); /* same as hero overlay */
+    backdrop-filter: blur(6px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+}
+.nav ul li {
+    padding: 18px;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: "Dosis", sans-serif;
+    position: relative;
+    color: #ffffff;
+    opacity: 0.85;
+
+}
+.nav ul li:hover {
+    opacity: 1;
+    color: #FDDE55;
+}
+.nav ul li:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background-color: #FDDE55;
+    transition: all .4s ease-in-out;
+}
+.nav ul li:hover:after {
+    width: 0;
+}
+.header ul li:hover {
+    color: #fff;
+}
+.account {
+    flex: 0.1;
+}
+.account ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.account ul li a {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: cursive;
+      background-color: #FDDE55;
+    color: #0f1c36;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.account ul li a:hover {
+
+    background-color: #f5c400;
+    color: #0f1c36;
+  
+}
+
+/* ===== HERO ===== */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.btn.primary {
+  background: #FDDE55;
+  color: #0f1c36;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #FDDE55;
+  color: #FDDE55;
+}
+
+.btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .home-text {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .home-text h1 {
+    font-size: 32px;
+  }
+
+  .home-text span {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    background-position: center;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;   /* 🔥 THIS moves text right */
+
+  background-image: url("assests/hero-food.jpg");
+  background-size: cover;
+  background-position: center left; /* food stays left */
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(15, 28, 54, 0.82),   /* dark near text */
+    rgba(15, 28, 54, 0.45),
+    rgba(15, 28, 54, 0.05)   /* almost clear on food */
+  );
+  z-index: 1;
+}
+
+.container img {
+    width: 500px;
+    height: auto;
+    position: absolute;
+    bottom: 110px;
+    right: 0;
+}
+.home-text {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 220px 220px 120px 40px; /* more space from right edge */
+  text-align: left;
+  margin-left: auto;
+}
+
+
+.home-text h1 {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-family: "Dosis", sans-serif;
+  color: #ffffff;
+  margin-bottom: 14px;
+  
+}
+
+.home-text span {
+  font-size: 20px;
+  line-height: 1.6;
+  display: block;
+  margin-top:6px ;
+  font-weight: 400;
+  max-width: 460px;
+  color: #fcd564;
+  font-family: "Sofadi One", cursive;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 0.5rem 1rem;
+    max-width: 140px;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    font-weight: 600;
+    background-color: #FDDE55;
+    color: #16325B;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #16325B;
+    color: #FDDE55;
+}
+
+.decision-overlay {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.15);
+
+  padding: 26px 34px;
+  border-radius: 24px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+.decision-overlay h3 {
+  color: #ffffff;
+  font-family: "Dosis", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.decision-options {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.decision-options button {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.decision-options button:hover {
+  background: #FDDE55;
+  color: #16325B;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .decision-overlay {
+    position: static;
+    transform: none;
+    margin: 24px auto 0;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  .decision-options button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== SECTION HEADINGS ===== */
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.heading h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #16325B;
+    font-family: "Dosis", sans-serif;
+}
+.heading span {
+    color: #e2b900;
+}
+
+body {
+  background: #ffffff;
+}
+
+/* ================================
+   CATEGORIES / DISCOVER YOUR TASTE
+   ================================ */
+
+.categories-modern {
+  background: #f6f7fb;           /* solid background – hard cut from hero */
+  padding: 90px 0 80px;
+}
+
+/* ----- Heading ----- */
+.categories-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.categories-heading h2 {
+  font-family: "Dosis", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #16325B;
+  letter-spacing: 0.4px;
+}
+
+.categories-heading span {
+  color: #e6ad30;
+  font-family: "Sofadi One", cursive;
+}
+
+.categories-heading p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ----- Cards Grid ----- */
+.categories-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ----- Card ----- */
+.cat-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(22, 50, 91, 0.12);
+}
+
+/* Featured card */
+.cat-card.featured {
+  border: 2px solid #fcd564;
+  box-shadow: 0 18px 42px rgba(252, 213, 100, 0.35);
+}
+
+/* Image */
+.cat-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ----- Card Content ----- */
+.cat-details {
+  padding: 26px 24px 28px;
+}
+
+.cat-details h3 {
+  font-family: "Dosis", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #16325B;
+  margin-bottom: 6px;
+}
+
+.cat-details p {
+  font-size: 1rem;
+  color: #7a7d87;
+  margin-bottom: 22px;
+  line-height: 1.4;
+}
+
+/* ----- Button ----- */
+.card-btn {
+  background: #16325B;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-btn:hover {
+  background: #fcd564;
+  color: #16325B;
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 900px) {
+  .categories-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .categories-heading h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* === How It Works Section === */
+
+.how-it-works {
+  background: #f6f7fb;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.hiw-heading h2 {
+  font-family: "Dosis", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #16325B;
+}
+
+.hiw-heading span {
+  color: #e6ad30;
+}
+
+.hiw-heading p {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  color: #6b7280;
+}
+
+/* Container */
+.hiw-container {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Step Card */
+.hiw-step {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 34px 26px;
+  max-width: 320px;
+  box-shadow: 0 16px 36px rgba(22, 50, 91, 0.12);
+}
+
+/* Icon */
+.hiw-icon {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #fff6e2;
+  color: #16325B;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text */
+.hiw-step h3 {
+  font-family: "Dosis", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #16325B;
+  margin-bottom: 10px;
+}
+
+.hiw-step p {
+  font-size: 0.98rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .hiw-container {
+    gap: 26px;
+  }
+
+  .hiw-heading h2 {
+    font-size: 2.3rem;
+  }
+}
+
+
+/* === Review === */
+
+.reviews {
+  background: #ffffff;
+  padding: 90px 20px;
+}
+
+.reviews-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reviews-heading h2 {
+  font-family: "Dosis", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #16325B;
+}
+
+.reviews-heading span {
+  color: #e6ad30;
+}
+
+.reviews-heading p {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 1.05rem;
+}
+
+/* Review Card */
+.review-card {
+  background: #f9fafc;
+  border-radius: 22px;
+  padding: 26px;
+  max-width: 360px;
+  margin: auto;
+  box-shadow: 0 14px 36px rgba(22, 50, 91, 0.12);
+}
+
+/* Top section */
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+/* Avatar */
+.review-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #FDDE55;
+  flex-shrink: 0;
+}
+
+.review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* User Info */
+.review-user h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #16325B;
+}
+
+.review-user span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Review Text */
+.review-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+/* Rating */
+.review-rating {
+  font-size: 1.1rem;
+  color: #f5c400;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .review-card {
+    max-width: 90%;
+  }
+
+  .reviews-heading h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ===== SWIPER ARROWS ===== */
+.swiper-button-next {
+    background: url(assests/rightarrownew-removebg-preview.png) no-repeat center;
+    background-size: 180% auto;
+    margin-right: 5px;
+}
+.swiper-button-next::after { display: none; }
+.swiper-button-prev {
+    background: url(assests/leftarrownew-removebg-preview.png) no-repeat center;
+    background-size: 180% auto;
+    margin-left: 10px;
+}
+.swiper-button-prev::after { display: none; }
+
+/* ===== REVIEWS ===== */
+.reviews {
+    background: #f5f7fa;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+.review-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.review-box p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+.review-box h3 {
+    color: #16325B;
+    font-family: cursive;
+}
+
+/* ======================
+   NEWSLETTER
+   ====================== */
+
+.newsletter {
+  background: #16325B;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-box {
+  max-width: 600px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.newsletter-box h2 {
+  font-family: "Dosis", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.newsletter-box p {
+  font-size: 1rem;
+  color: #e5e7eb;
+  margin-bottom: 26px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  width: 260px;
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: none;
+  background: #FDDE55;
+  color: #16325B;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background: #f5c400;
+}
+
+/* ======================
+   FOOTER
+   ====================== */
+
+.site-footer {
+  background: #0f1c36;
+  color: #d1d5db;
+  padding: 60px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-brand img {
+  width: 110px;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #9ca3af;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.footer-links a {
+  display: block;
+  margin-bottom: 8px;
+  color: #FDDE55;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.social-icons a {
+  color: #FDDE55;
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+/* Bottom line */
+.footer-bottom {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}

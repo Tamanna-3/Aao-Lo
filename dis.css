@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+.logo img {
+    width: 120px;
+    margin-left: 15px;
+}
+.bar {
+    display: none;
+    color: #FDDE55;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    background: rgba(15, 28, 54, 0.921); /* same as hero overlay */
+    backdrop-filter: blur(6px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+}
+
+.header ul {
+    display: flex;
+    align-items: center;
+}
+.nav ul li {
+    padding: 18px;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: "Dosis", sans-serif;
+    position: relative;
+    color: #ffffff;
+    opacity: 0.85;
+
+}
+.nav ul li:hover {
+    opacity: 1;
+    color: #FDDE55;
+}
+.nav ul li:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 3px;
+    background-color: #FDDE55;
+    transition: all .4s ease-in-out;
+}
+.nav ul li:hover:after {
+    width: 0;
+}
+.header ul li:hover {
+    color: #fff;
+}
+.account {
+    flex: 0.1;
+}
+.account ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.account ul li a {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 600;
+    font-family: cursive;
+      background-color: #FDDE55;
+    color: #0f1c36;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.account ul li a:hover {
+
+    background-color: #f5c400;
+    color: #0f1c36;
+  
+}
+
+/* ===== HERO ===== */
+.discover-hero {
+  padding: 140px 20px 80px;
+  text-align: center;
+  background: #fff6e2;
+}
+
+.discover-hero h1 {
+  font-family: "Dosis", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #16325B;
+}
+
+.discover-hero span {
+  color: #e6ad30;
+  font-family: "Sofadi One", cursive;
+}
+
+.discover-hero p {
+  margin-top: 15px;
+  font-size: 1.05rem;
+  color: #6b7280;
+}
+
+/* ===== SECTIONS ===== */
+.discover-section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.discover-section.light {
+  background: #f6f7fb;
+}
+
+.discover-section h2 {
+  font-family: "Dosis", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #16325B;
+  margin-bottom: 40px;
+}
+
+.discover-section h2 span {
+  color: #e6ad30;
+}
+
+/* ===== CARDS ===== */
+.card-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 28px;
+}
+
+.discover-card {
+  height: 150px;
+  border-radius: 20px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 34px rgba(22, 50, 91, 0.12);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.discover-card span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #16325B;
+}
+
+.discover-card.food {
+  background: #16325B;
+}
+
+.discover-card.food span {
+  color: #ffffff;
+}
+
+.discover-card:hover {
+  transform: translateY(-6px);
+  outline: 2px solid #fcd564;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .discover-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .discover-card {
+    height: 120px;
+  }
+
+  .nav ul {
+    display: none;
+  }
+}
+.discover-card.selected {
+  outline: 3px solid #FDDE55;
+  transform: translateY(-6px);
+}
